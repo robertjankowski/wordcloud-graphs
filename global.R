@@ -6,6 +6,7 @@ library(pdftools)
 library(qdapTools)
 library(tools)
 library(qdapTools)
+library()
 
 getTermMatrix <- memoise(function(files) {
     
@@ -20,7 +21,16 @@ getTermMatrix <- memoise(function(files) {
     }
     else if (type == "docx") {
         docx <- paste(read_docx(files), collapse='\n')
-        text <-  VCorpus(VectorSource(docx))
+        text <- VCorpus(VectorSource(docx))
+    }
+    else if (type == "html") {
+        text <- Corpus(URISource(files))
+        # TODO
+        # remove html tags
+    }
+    else if (type == "txt") { 
+        txt <- read.delim(files, header = F, sep = '\n', stringsAsFactor = F)
+        text <- VCorpus(VectorSource(txt))
     }
     else {
         print("Wrong file type")

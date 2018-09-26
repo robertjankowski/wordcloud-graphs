@@ -7,10 +7,12 @@ fluidPage(theme=shinytheme("journal"),
     
     sidebarLayout(
         sidebarPanel(
-            fileInput("file1", "Wybierz plik .pdf/.doc/.docx",
+            fileInput("file1", "Wybierz plik .pdf/.doc/.docx/.txt",
                       accept = c(
                           "application/pdf", ".pdf", "application/msword",
-                          "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                          "text/plain", 
+                          "text/html")
             ),
             tags$hr(),
             hr(),
