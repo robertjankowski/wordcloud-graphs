@@ -1,6 +1,6 @@
 # wordcloud-graphs
 
-1. Generate wordcloud and graphs from **.pdf**, **.doc** or **.docx**.
+1. Generate wordcloud and graphs from **.pdf**, **.doc**, **.docx**, **.txt** or **.html**.
 2. Save wordcloud to **.png**.
 
 > **Full version is available at [`shinyapps.io` server](https://robertjankowski.shinyapps.io/wordcloud-app/)**
