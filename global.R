@@ -6,7 +6,7 @@ library(pdftools)
 library(qdapTools)
 library(tools)
 library(qdapTools)
-library()
+library(rvest)
 
 getTermMatrix <- memoise(function(files) {
     
@@ -24,9 +24,10 @@ getTermMatrix <- memoise(function(files) {
         text <- VCorpus(VectorSource(docx))
     }
     else if (type == "html") {
-        text <- Corpus(URISource(files))
-        # TODO
-        # remove html tags
+        # default encoding: UTF-8/UTF-16
+        html_file <- read_html(files, options = "NOBLANKS")
+        html_file <- html_text(html_file)
+        text <- Corpus(VectorSource(html_file))
     }
     else if (type == "txt") { 
         txt <- read.delim(files, header = F, sep = '\n', stringsAsFactor = F)

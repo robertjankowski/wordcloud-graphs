@@ -7,12 +7,25 @@ fluidPage(theme=shinytheme("journal"),
     
     sidebarLayout(
         sidebarPanel(
-            fileInput("file1", "Wybierz plik .pdf/.doc/.docx/.txt",
+            fileInput("file1", "Wybierz plik\n",
                       accept = c(
                           "application/pdf", ".pdf", "application/msword",
                           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                           "text/plain", 
                           "text/html")
+            ),
+            tags$div(
+                tags$p("Dostępne formaty plików: "),
+                tags$p("(.pdf/.doc/.docx/.txt/.html)"),
+                tags$style(HTML("
+                    p {
+                        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+                        font-style: italic;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #958e8c;
+                    }
+                "))
             ),
             tags$hr(),
             hr(),
