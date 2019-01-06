@@ -21,9 +21,3 @@ Based on [shiny example](https://shiny.rstudio.com/gallery/word-cloud.html).
 ***
 **Interactive graph**
 ![interactive-graph](images/interactive-graph-example.png)
-
-### Acknowledgments
-The purpose of this project was to give my mum a tool which will be good addition to history lessons.
-
-### Licence
-[MIT License](https://opensource.org/licenses/MIT)
